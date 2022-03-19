@@ -7,8 +7,8 @@
 ######################################################################
 p6df::modules::helm::deps() {
   ModuleDeps=(
-    p6m7g8/p6df-go
-    p6m7g8/p6helm
+    p6m7g8-dotfiles/p6df-go
+    p6m7g8-dotfiles/p6helm
     ohmyzsh/ohmyzsh:plugins/helm
   )
 }
