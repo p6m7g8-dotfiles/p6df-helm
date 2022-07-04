@@ -54,6 +54,20 @@ p6df::modules::helm::langs() {
 #/ Windows		%TEMP%\helm			%APPDATA%\helm			%APPDATA%\helm
 ######################################################################
 p6df::modules::helm::init() {
+
+  p6df::modules::helm::prompt::init
+}
+
+######################################################################
+#<
+#
+# Function: p6df::modules::helm::prompt::init()
+#
+#>
+######################################################################
+p6df::modules::helm::prompt::init() {
+
+  p6df::core::prompt::line::add "p6df::modules::helm::prompt::line"
 }
 
 ######################################################################
@@ -88,6 +102,8 @@ p6df::modules::helm::kubernetes::dashboard::token() {
 #
 # Function: p6df::modules::helm::jenkins::admin::password()
 #
+#  Depends:	 p6_echo p6_env
+#  Environment:	 JENKINS_PASS
 #>
 ######################################################################
 p6df::modules::helm::jenkins::admin::password() {
@@ -121,6 +137,8 @@ p6df::modules::helm::external-dns::chart::add() {
 #
 # Function: p6df::modules::helm::jenkins::chart::add()
 #
+#  Depends:	 p6_file
+#  Environment:	 URL
 #>
 ######################################################################
 p6df::modules::helm::jenkins::chart::add() {
