@@ -8,8 +8,8 @@
 p6df::modules::helm::deps() {
   ModuleDeps=(
     p6m7g8-dotfiles/p6df-go
-    p6m7g8-dotfiles/p6helm
     ohmyzsh/ohmyzsh:plugins/helm
+    p6m7g8-dotfiles/p6helm
   )
 }
 
@@ -102,7 +102,6 @@ p6df::modules::helm::kubernetes::dashboard::token() {
 #
 # Function: p6df::modules::helm::jenkins::admin::password()
 #
-#  Depends:	 p6_echo p6_env
 #  Environment:	 JENKINS_PASS
 #>
 ######################################################################
@@ -137,7 +136,6 @@ p6df::modules::helm::external-dns::chart::add() {
 #
 # Function: p6df::modules::helm::jenkins::chart::add()
 #
-#  Depends:	 p6_file
 #  Environment:	 URL
 #>
 ######################################################################
