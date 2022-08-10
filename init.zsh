@@ -1,3 +1,4 @@
+# shellcheck shell=bash
 ######################################################################
 #<
 #
@@ -8,8 +9,8 @@
 p6df::modules::helm::deps() {
   ModuleDeps=(
     p6m7g8-dotfiles/p6df-go
-    ohmyzsh/ohmyzsh:plugins/helm
     p6m7g8-dotfiles/p6helm
+    ohmyzsh/ohmyzsh:plugins/helm
   )
 }
 
@@ -23,6 +24,8 @@ p6df::modules::helm::deps() {
 p6df::modules::helm::external::brew() {
 
   brew install helm
+
+  p6_return_void
 }
 
 ######################################################################
@@ -40,6 +43,8 @@ p6df::modules::helm::langs() {
   helm repo add nginx https://helm.nginx.com/stable
   helm repo add prometheus https://prometheus-community.github.io/helm-charts
   helm repo add stable https://charts.helm.sh/stable
+
+  p6_return_void
 }
 
 ######################################################################
@@ -56,6 +61,8 @@ p6df::modules::helm::langs() {
 p6df::modules::helm::init() {
 
   p6df::modules::helm::prompt::init
+
+  p6_return_void
 }
 
 ######################################################################
