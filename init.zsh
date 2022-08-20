@@ -9,7 +9,6 @@
 p6df::modules::helm::deps() {
   ModuleDeps=(
     p6m7g8-dotfiles/p6df-go
-    p6m7g8-dotfiles/p6helm
     ohmyzsh/ohmyzsh:plugins/helm
   )
 }
@@ -50,7 +49,7 @@ p6df::modules::helm::langs() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::helm::init()
+# Function: p6df::modules::helm::prompt::line()
 #
 #>
 #/ Operating System	Cache Path			Configuration Path		Data Path
@@ -58,35 +57,28 @@ p6df::modules::helm::langs() {
 #/ macOS		$HOME/Library/Caches/helm	$HOME/Library/Preferences/helm	$HOME/Library/helm
 #/ Windows		%TEMP%\helm			%APPDATA%\helm			%APPDATA%\helm
 ######################################################################
-p6df::modules::helm::init() {
-
-  p6df::modules::helm::prompt::init
-
-  p6_return_void
-}
-
-######################################################################
-#<
-#
-# Function: p6df::modules::helm::prompt::init()
-#
-#>
-######################################################################
-p6df::modules::helm::prompt::init() {
-
-  p6df::core::prompt::line::add "p6df::modules::helm::prompt::line"
-}
-
-######################################################################
-#<
-#
-# Function: p6df::modules::helm::prompt::line()
-#
-#>
-######################################################################
 p6df::modules::helm::prompt::line() {
 
-  p6_helm_prompt_info
+    local str
+
+    if ! p6_string_blank "$KUBECONFIG"; then
+      str="helm:     "
+    fi
+
+    local helm_ctx=${HELM_KUBECONTEXT:-$P6_KUBE_CFG}
+    if ! p6_string_blank "$helm_ctx"; then
+      str="${str}ctx=[$helm_ctx]"
+    fi
+    local helm_ns=${HELM_NAMESPACE:-$P6_KUBE_NS}
+    if ! p6_string_blank "$helm_ns"; then
+      str="${str} ns=[$helm_ns]"
+    fi
+
+    if p6_string_blank "$str"; then
+      p6_return_void
+    else
+      p6_return_str "$str"
+    fi
 }
 
 ######################################################################
@@ -117,7 +109,8 @@ p6df::modules::helm::jenkins::admin::password() {
   local pass
   pass=$(kubectl exec --namespace jenkins -it svc/jenkins -c jenkins -- /bin/cat /run/secrets/chart-admin-password)
   p6_env_export "JENKINS_PASS" "$pass"
-  p6_echo "$pass"
+
+  p6_return_str "$pass"
 }
 
 ######################################################################
