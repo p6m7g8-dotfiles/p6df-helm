@@ -51,6 +51,10 @@ p6df::modules::helm::langs() {
 #
 # Function: p6df::modules::helm::prompt::line()
 #
+#  Returns:
+#	str - str
+#
+#  Environment:	 HELM_KUBECONTEXT HELM_NAMESPACE KUBECONFIG
 #>
 #/ Operating System	Cache Path			Configuration Path		Data Path
 #/ Linux		$HOME/.cache/helm		$HOME/.config/helm		$HOME/.local/share/helm
@@ -99,7 +103,10 @@ p6df::modules::helm::kubernetes::dashboard::token() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::helm::jenkins::admin::password()
+# Function: str pass = p6df::modules::helm::jenkins::admin::password()
+#
+#  Returns:
+#	str - pass
 #
 #  Environment:	 JENKINS_PASS
 #>
