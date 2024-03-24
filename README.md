@@ -10,8 +10,7 @@
   - [Summary](#summary)
   - [Contributing](#contributing)
   - [Code of Conduct](#code-of-conduct)
-  - [Changes](#changes)
-    - [Usage](#usage)
+  - [Usage](#usage)
   - [Author](#author)
 
 ### Badges
@@ -34,27 +33,51 @@
 
 - [Code of Conduct](https://github.com/p6m7g8/.github/blob/master/CODE_OF_CONDUCT.md)
 
-## Changes
-
-- [Change Log](CHANGELOG.md)
-
 ## Usage
+
+
+### Aliases
+
+
+### Functions
 
 ### p6df-helm:
 
 #### p6df-helm/init.zsh:
 
 - p6df::modules::helm::deps()
-- p6df::modules::helm::external-dns::chart::add(zone_id, role_arn)
 - p6df::modules::helm::external::brew()
-- p6df::modules::helm::jenkins::chart::add()
-- p6df::modules::helm::kubernetes::dashboard::token()
+- p6df::modules::helm::init(_module, dir)
 - p6df::modules::helm::langs()
 - p6df::modules::helm::prompt::line()
+
+
+### p6df-helm/lib:
+
+#### p6df-helm/lib/external_dns.sh:
+
+- p6df::modules::helm::external-dns::chart::add(zone_id, role_arn)
+
+#### p6df-helm/lib/jenkins.sh:
+
+- p6df::modules::helm::jenkins::chart::add()
 - str pass = p6df::modules::helm::jenkins::admin::password()
 
+#### p6df-helm/lib/kubernetes.sh:
+
+- p6df::modules::helm::kubernetes::dashboard::token()
 
 
+
+## Hier
+```text
+.
+├── external_dns.sh
+├── jenkins.sh
+└── kubernetes.sh
+
+1 directory, 3 files
+```
 ## Author
 
 Philip M . Gollucci <pgollucci@p6m7g8.com>
