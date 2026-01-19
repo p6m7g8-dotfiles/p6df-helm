@@ -24,7 +24,6 @@ p6df::modules::helm::jenkins::admin::password() {
 #
 # Function: p6df::modules::helm::jenkins::chart::add()
 #
-#  Environment:	 URL
 #>
 ######################################################################
 p6df::modules::helm::jenkins::chart::add() {
