@@ -39,7 +39,7 @@ p6df::modules::helm::langs() {
 
   helm repo add bitnami https://charts.bitnami.com/bitnami
   helm repo add jenkinsci https://charts.jenkins.io
-  helm repo add kubernetes-dashoard https://kubernetes.github.io/dashboard
+  helm repo add kubernetes-dashboard https://kubernetes.github.io/dashboard
   helm repo add nginx https://helm.nginx.com/stable
   helm repo add prometheus https://prometheus-community.github.io/helm-charts
   helm repo add stable https://charts.helm.sh/stable
@@ -70,15 +70,15 @@ p6df::modules::helm::init() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::helm::prompt::line()
+# Function: p6df::modules::helm::prompt::mod()
 #
 #>
-#/ Operating System Cache Path		      Configuration Path 	     Data Path
-#/ Linux  	    $HOME/.cache/helm         $HOME/.config/helm  	     $HOME/.local/share/helm
-#/ macOS	    $HOME/Library/Caches/helm $HOME/Library/Preferences/helm $HOME/Library/helm
-#/ Windows	    %TEMP%\helm		      %APPDATA%\helm		     %APPDATA%\helm
+#/ Operating System Cache Path		        Configuration Path 	            Data Path
+#/ Linux  	    $HOME/.cache/helm         $HOME/.config/helm  	          $HOME/.local/share/helm
+#/ macOS	      $HOME/Library/Caches/helm $HOME/Library/Preferences/helm  $HOME/Library/helm
+#/ Windows	    %TEMP%\helm		            %APPDATA%\helm		              %APPDATA%\helm
 ######################################################################
-p6df::modules::helm::prompt::line() {
+p6df::modules::helm::prompt::mod() {
 
   p6_helm_prompt_info
 }

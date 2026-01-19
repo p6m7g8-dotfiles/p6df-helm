@@ -5,8 +5,6 @@
 ## Badges
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Mergify](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges//p6df-helm/&style=flat)](https://mergify.io)
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](<https://gitpod.io/#https://github.com//p6df-helm>)
 
 ## Summary
 
@@ -32,7 +30,7 @@
 - p6df::modules::helm::external::brew()
 - p6df::modules::helm::init(_module, dir)
 - p6df::modules::helm::langs()
-- p6df::modules::helm::prompt::line()
+- p6df::modules::helm::prompt::mod()
 
 ## p6df-helm/lib
 
