@@ -23,7 +23,7 @@ p6df::modules::helm::deps() {
 ######################################################################
 p6df::modules::helm::external::brew() {
 
-  p6df::modules::homebrew::cli::brew::install helm
+  p6df::core::homebrew::cli::brew::install helm
 
   p6_return_void
 }
