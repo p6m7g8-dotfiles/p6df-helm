@@ -9,7 +9,7 @@
 p6df::modules::helm::kubernetes::dashboard::token() {
 
   local secret
-  secret=$(kubectl -n kube-system get secret | awk '/eks-admin/ { print $1 }')
+  secret=$(kubectl -n kube-system get secret | p6_filter_row_select "eks-admin" | p6_filter_column_pluck 1)
 
-  kubectl -n kube-system describe secret "$secret" | awk '/^token/ { print $2 }'
+  kubectl -n kube-system describe secret "$secret" | p6_filter_row_select "^token" | p6_filter_column_pluck 2
 }
