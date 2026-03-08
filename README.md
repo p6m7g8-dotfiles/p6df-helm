@@ -39,8 +39,8 @@ TODO: Add a short summary of this module.
 - `p6df::modules::helm::external::brew()`
 - `p6df::modules::helm::init(_module, dir)`
   - Args:
-    - _module - 
-    - dir - 
+    - _module -
+    - dir -
 - `p6df::modules::helm::langs()`
 - `p6df::modules::helm::prompt::mod()`
 
