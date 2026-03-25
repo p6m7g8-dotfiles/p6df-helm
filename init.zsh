@@ -31,6 +31,22 @@ p6df::modules::helm::external::brew() {
 ######################################################################
 #<
 #
+# Function: p6df::modules::helm::home::symlinks()
+#
+#  Environment:	 HOME P6_DFZ_SRC_DIR
+#>
+######################################################################
+p6df::modules::helm::home::symlinks() {
+
+  p6_file_symlink "$P6_DFZ_SRC_DIR/akin-ozer/cc-devops-skills/devops-skills-plugin/skills/helm-generator"                   "$HOME/.claude/skills/helm-generator"
+  p6_file_symlink "$P6_DFZ_SRC_DIR/akin-ozer/cc-devops-skills/devops-skills-plugin/skills/helm-validator"                   "$HOME/.claude/skills/helm-validator"
+
+  p6_return_void
+}
+
+######################################################################
+#<
+#
 # Function: p6df::modules::helm::langs()
 #
 #>
