@@ -17,11 +17,11 @@ p6df::modules::helm::deps() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::helm::external::brew()
+# Function: p6df::modules::helm::external::brews()
 #
 #>
 ######################################################################
-p6df::modules::helm::external::brew() {
+p6df::modules::helm::external::brews() {
 
   p6df::core::homebrew::cli::brew::install helm
 
