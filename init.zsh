@@ -66,35 +66,15 @@ p6df::modules::helm::langs() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::helm::init(_module, dir)
-#
-#  Args:
-#	_module -
-#	dir -
+# Function: p6df::modules::helm::prompt::context()
 #
 #>
+#/ Operating System Cache Path		      Configuration Path 	      Data Path
+#/ Linux  	    $HOME/.cache/helm         $HOME/.config/helm  	      $HOME/.local/share/helm
+#/ macOS	    $HOME/Library/Caches/helm $HOME/Library/Preferences/helm  $HOME/Library/helm
+#/ Windows	    %TEMP%\helm		      %APPDATA%\helm		      %APPDATA%\helm
 ######################################################################
-p6df::modules::helm::init() {
-  local _module="$1"
-  local dir="$2"
-
-  p6_bootstrap "$dir"
-
-  p6_return_void
-}
-
-######################################################################
-#<
-#
-# Function: p6df::modules::helm::prompt::mod()
-#
-#>
-#/ Operating System Cache Path		        Configuration Path 	            Data Path
-#/ Linux  	    $HOME/.cache/helm         $HOME/.config/helm  	          $HOME/.local/share/helm
-#/ macOS	      $HOME/Library/Caches/helm $HOME/Library/Preferences/helm  $HOME/Library/helm
-#/ Windows	    %TEMP%\helm		            %APPDATA%\helm		              %APPDATA%\helm
-######################################################################
-p6df::modules::helm::prompt::mod() {
+p6df::modules::helm::prompt::context() {
 
   p6_helm_prompt_info
 }
