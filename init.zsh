@@ -1,5 +1,11 @@
 # shellcheck shell=bash
 ######################################################################
+#<
+#
+# Function: p6df::modules::helm::deps()
+#
+#>
+######################################################################
 p6df::modules::helm::deps() {
   ModuleDeps=(
     p6m7g8-dotfiles/p6df-go
@@ -8,6 +14,13 @@ p6df::modules::helm::deps() {
   )
 }
 
+######################################################################
+#<
+#
+# Function: p6df::modules::helm::home::symlinks()
+#
+#  Environment:	 HOME P6_DFZ_SRC_DIR
+#>
 ######################################################################
 p6df::modules::helm::home::symlinks() {
 
@@ -18,6 +31,12 @@ p6df::modules::helm::home::symlinks() {
 }
 
 ######################################################################
+#<
+#
+# Function: p6df::modules::helm::external::brews()
+#
+#>
+######################################################################
 p6df::modules::helm::external::brews() {
 
   p6df::core::homebrew::cli::brew::install helm
@@ -25,6 +44,12 @@ p6df::modules::helm::external::brews() {
   p6_return_void
 }
 
+######################################################################
+#<
+#
+# Function: p6df::modules::helm::langs()
+#
+#>
 ######################################################################
 p6df::modules::helm::langs() {
 
@@ -38,31 +63,6 @@ p6df::modules::helm::langs() {
   p6_return_void
 }
 
-######################################################################
-#<
-#
-# Function: p6df::modules::helm::deps()
-#
-#>
-######################################################################
-#<
-#
-# Function: p6df::modules::helm::external::brews()
-#
-#>
-######################################################################
-#<
-#
-# Function: p6df::modules::helm::home::symlinks()
-#
-#  Environment:	 HOME P6_DFZ_SRC_DIR
-#>
-######################################################################
-#<
-#
-# Function: p6df::modules::helm::langs()
-#
-#>
 ######################################################################
 #<
 #
