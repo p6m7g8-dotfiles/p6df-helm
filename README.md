@@ -36,13 +36,10 @@ TODO: Add a short summary of this module.
 ##### p6df-helm/init.zsh
 
 - `p6df::modules::helm::deps()`
-- `p6df::modules::helm::external::brew()`
-- `p6df::modules::helm::init(_module, dir)`
-  - Args:
-    - _module -
-    - dir -
+- `p6df::modules::helm::external::brews()`
+- `p6df::modules::helm::home::symlinks()`
 - `p6df::modules::helm::langs()`
-- `p6df::modules::helm::prompt::mod()`
+- `p6df::modules::helm::prompt::context()`
 
 #### p6df-helm/lib
 
